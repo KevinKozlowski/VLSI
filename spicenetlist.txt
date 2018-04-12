@@ -1,0 +1,22 @@
+8. High to Low Level Shifter/ High-Active Enable, Clamp High LSDNENX1
+High to Low Level Shifter/ High-Active Enable, Clamp Low LSDNENCLX1
+
+.subckt LSDNENX1_LVT A EN VDDH VDDL VSS Y
+MN0 net31 EN VSS VSS n105_lvt w=0.17u l=0.03u nf=1.0 m=1
+MN2 Y net20 net21 VSS n105_lvt w=0.32u l=0.03u nf=1.0 m=1
+MN3 net21 net31 VSS VSS n105_lvt w=0.32u l=0.03u nf=1.0 m=1
+MN1 net20 A VSS VSS n105_lvt w=0.17u l=0.03u nf=1.0 m=1
+MP0 net31 EN VDDL VDDL p105_lvt w=0.4u l=0.03u nf=1.0 m=1
+MP3 Y net31 VDDL VDDL p105_lvt w=0.66u l=0.03u nf=1.0 m=1
+MP2 Y net20 VDDL VDDL p105_lvt w=0.66u l=0.03u nf=1.0 m=1
+MP1 net20 A VDDH VDDH p105_lvt w=0.35u l=0.03u nf=1.0 m=2
+.ends LSDNENX1_LVT
+
+.subckt LSDNENCLX1_LVT A EN VDDH VDDL VSS Y
+MN2 Y net20 VSS VSS n105_lvt w=0.1u l=0.03u nf=1.0 m=1
+MM2 Y EN VSS VSS n105_lvt w=0.1u l=0.03u nf=1.0 m=1
+MN1 net20 A VSS VSS n105_lvt w=0.17u l=0.03u nf=1.0 m=1
+MP3 net46 EN VDDL VDDL p105_lvt w=0.75u l=0.03u nf=1.0 m=2
+MP2 Y net20 net46 VDDL p105_lvt w=0.75u l=0.03u nf=1.0 m=2
+MP1 net20 A VDDH VDDH p105_lvt w=0.35u l=0.03u nf=1.0 m=2
+.ends LSDNENCLX1_LVT
